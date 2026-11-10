@@ -1,190 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio Website</title>
+  <title>Maslah Mohamed | Web & App Developer</title>
+  <meta name="description" content="Maslah Mohamed is a web and app developer from Kenya who designs and builds clean, friendly websites and mobile apps." />
+  <meta name="theme-color" content="#7c3aed" />
+
+  <meta property="og:title" content="Maslah Mohamed | Web & App Developer" />
+  <meta property="og:description" content="Clean, friendly websites and mobile apps, designed and built by Maslah Mohamed in Kenya." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/download.jpeg" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/ae2d2d3110.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/ae2d2d3110.js" crossorigin="anonymous" defer></script>
 </head>
-
 <body>
-  <div id="header">
-    <div class="container">
-      <nav>
-        <img src="images/images.png" alt="Logo" class="logo" />
-        <i class="fa-solid fa-bars" id="menu-icon" onclick="toggleMenu()"></i>
-        <ul id="nav-links">
-          <li><a href="#header">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact Me</a></li>
-        </ul>
-      </nav>
-      <div id="header-text">
-        <p>Developer</p>
-        <h1>Hi, I'm <span>Maslah</span><br />Mohamed From Kenya</h1>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Navigation -->
+  <header class="site-header" id="header">
+    <nav class="container nav">
+      <a href="#hero" class="brand" aria-label="Maslah Mohamed, home">
+        <img src="images/images.png" alt="" class="logo" />
+        <span>Maslah<span class="dot">.</span></span>
+      </a>
+      <button id="menu-icon" class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact" class="nav-cta">Let's talk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <p class="availability"><span class="pulse" aria-hidden="true"></span> Available for freelance projects</p>
+      <h1>Hi, I'm <span class="accent">Maslah Mohamed</span>.<br />I build websites and apps people enjoy using.</h1>
+      <p class="hero-sub">
+        Web and app developer from Kenya. I turn ideas into clean, fast and
+        friendly digital products, from the first sketch to launch day.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn">View my work</a>
+        <a href="#contact" class="btn btn-ghost">Say hello <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       </div>
+      <ul class="hero-tags" aria-label="Focus areas">
+        <li>UI/UX Design</li>
+        <li>Web Development</li>
+        <li>Android &amp; iOS Apps</li>
+      </ul>
     </div>
-  </div>
+  </section>
 
-  <!-- About Section -->
-  <div id="about">
-    <div class="container">
-      <div class="row">
-        <div class="about-col-1">
-          <img src="images/download.jpeg" />
+  <main id="main-content">
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img src="images/hero-bg.jpeg" alt="Portrait of Maslah Mohamed" />
         </div>
-        <div class="about-col-2">
-          <h1 class="sub-title">About Me</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        <div class="about-text">
+          <p class="eyebrow">About me</p>
+          <h2 id="about-heading" class="section-title">Nice to meet you</h2>
+          <p>
+            I'm a web and app developer based in Kenya. I care about building
+            interfaces that look good, feel easy and work reliably on every
+            device. I like working closely with clients, listening first and
+            then turning their ideas into something real.
+          </p>
 
-          <div class="tab-titles">
-            <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
-            <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
-            <p class="tab-links" onclick="opentab('education', event)">Education</p>
+          <div class="tab-titles" role="tablist" aria-label="About me">
+            <button class="tab-links active-link" role="tab" id="tab-skills" aria-selected="true" aria-controls="skills" data-tab="skills">Skills</button>
+            <button class="tab-links" role="tab" id="tab-experience" aria-selected="false" aria-controls="experience" data-tab="experience" tabindex="-1">Experience</button>
+            <button class="tab-links" role="tab" id="tab-education" aria-selected="false" aria-controls="education" data-tab="education" tabindex="-1">Education</button>
           </div>
 
-          <div class="tab-contents active-tab" id="skills">
-            <ul>
-              <li><span>UI/UX</span><br />Designing Web/App Interfaces</li>
-              <li><span>Web Developer</span><br />Web App Development</li>
-              <li><span>App Developer</span><br />Building Android/IOS Apps</li>
+          <div class="tab-contents active-tab" id="skills" role="tabpanel" aria-labelledby="tab-skills">
+            <ul class="detail-list">
+              <li><span>UI/UX Design</span>Designing clear, friendly web and app interfaces</li>
+              <li><span>Web Development</span>Building responsive, accessible websites and web apps</li>
+              <li><span>App Development</span>Creating Android and iOS apps</li>
             </ul>
           </div>
-          <div class="tab-contents" id="experience">
-            <ul>
-              <li><span>2025 - Current</span><br />Freelance Developer</li>
-              <li><span>2023 - 2024</span><br />Junior Developer Intern</li>
+          <div class="tab-contents" id="experience" role="tabpanel" aria-labelledby="tab-experience">
+            <ul class="detail-list">
+              <li><span>2025 – Present</span>Freelance Developer</li>
+              <li><span>2023 – 2024</span>Junior Developer Intern</li>
             </ul>
           </div>
-          <div class="tab-contents" id="education">
-            <ul>
-              <li><span>2022</span><br />BSc. Computer Science, XYZ University</li>
-              <li><span>2020</span><br />Certified Web Developer, Online Course</li>
+          <div class="tab-contents" id="education" role="tabpanel" aria-labelledby="tab-education">
+            <ul class="detail-list">
+              <li><span>2022</span>BSc. Computer Science, XYZ University</li>
+              <li><span>2020</span>Certified Web Developer, Online Course</li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Services Section -->
-  <div id="services" class="services">
-    <div class="container">
-      <h1 class="sub-title">My Services</h1>
-      <div class="services-list">
-        <div>
-          <i class="fa-solid fa-code"></i>
-          <h2>Web Design</h2>
-          <p>I design responsive and modern websites tailored to your brand.</p>
-          <a href="#">Learn more</a>
-        </div>
-        <div>
-          <i class="fa-solid fa-crop-simple"></i>
-          <h2>UX/UI Design</h2>
-          <p>User-friendly and visually engaging app interface designs.</p>
-          <a href="#">Learn more</a>
-        </div>
-        <div>
-          <i class="fa-brands fa-app-store"></i>
-          <h2>App Development</h2>
-          <p>Custom Android/iOS apps with smooth functionality and design.</p>
-          <a href="#">Learn more</a>
+    <!-- Services -->
+    <section id="services" class="services alt" aria-labelledby="services-heading">
+      <div class="container">
+        <p class="eyebrow center">What I do</p>
+        <h2 id="services-heading" class="section-title center">How I can help</h2>
+        <div class="services-list">
+          <article class="card">
+            <div class="icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+            <h3>Web Design &amp; Development</h3>
+            <p>Modern, responsive websites tailored to your brand and built to load fast on any device.</p>
+            <a href="#contact">Start a project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+          <article class="card">
+            <div class="icon"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i></div>
+            <h3>UX/UI Design</h3>
+            <p>Simple, good-looking interfaces that make it easy for people to get things done.</p>
+            <a href="#contact">Start a project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+          <article class="card">
+            <div class="icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+            <h3>App Development</h3>
+            <p>Custom Android and iOS apps with smooth performance and a polished feel.</p>
+            <a href="#contact">Start a project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Work Section -->
-  <div id="work">
-    <div class="container">
-      <h1 class="sub-title">My Work</h1>
-      <div class="work-list">
-        <div class="work">
-          <img src="images/twitter-facebook-together-exchange-of-information-147413.jpeg" />
-          <div class="layer">
-            <h3>Social Media App</h3>
-            <p>The App connects you to talented people around the world.</p>
-            <a href="#"><i class="fa-solid fa-link"></i></a>
-          </div>
+    <!-- Work -->
+    <section id="work" aria-labelledby="work-heading">
+      <div class="container">
+        <p class="eyebrow center">Portfolio</p>
+        <h2 id="work-heading" class="section-title center">Selected work</h2>
+        <div class="work-list">
+          <article class="work">
+            <img src="images/twitter-facebook-together-exchange-of-information-147413.jpeg" alt="Social media app project preview" loading="lazy" />
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p>Connects you with talented people around the world.</p>
+              <a href="#" aria-label="View Social Media App project"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="work">
+            <img src="images/free-photo-of-man-sitting-by-desk-and-drawing-on-tablet.jpeg" alt="Music app project preview" loading="lazy" />
+            <div class="layer">
+              <h3>Music App</h3>
+              <p>Listen, share and connect with artists worldwide.</p>
+              <a href="#" aria-label="View Music App project"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="work">
+            <!-- Replace with a real image file if this name doesn't match yours -->
+            <img src="images/online-shopping-app.jpeg" alt="Online shopping app project preview" loading="lazy" />
+            <div class="layer">
+              <h3>Online Shopping App</h3>
+              <p>Shop your favorite brands with ease and convenience.</p>
+              <a href="#" aria-label="View Online Shopping App project"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+            </div>
+          </article>
         </div>
-        <div class="work">
-          <img src="images/free-photo-of-man-sitting-by-desk-and-drawing-on-tablet.jpeg" />
-          <div class="layer">
-            <h3>Music App</h3>
-            <p>Listen, share and connect with global artists.</p>
-            <a href="#"><i class="fa-solid fa-link"></i></a>
-          </div>
-        </div>
-        <div class="work">
-          <img src="images/work" />
-          <div class="layer">
-            <h3>Online Shopping App</h3>
-            <p>Shop from your favorite brands with ease and convenience.</p>
-            <a href="#"><i class="fa-solid fa-link"></i></a>
-          </div>
-        </div>
+        <div class="center-wrap"><a href="#" class="btn btn-outline">See more projects</a></div>
       </div>
-      <a href="#" class="btn">See More</a>
-    </div>
-  </div>
+    </section>
 
-  <!-- Contact Section -->
-  <div id="contact" class="contact">
-    <div class="container">
-      <div class="row">
+    <!-- Contact -->
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+      <div class="container contact-grid">
         <div class="contact-left">
-          <h1 class="sub-title">Contact Me</h1>
-          <p><i class="fa-solid fa-paper-plane"></i> maslahmohamed92@gmail.com</p>
-          <p><i class="fa-solid fa-phone"></i> +254722492593</p>
+          <p class="eyebrow light">Contact</p>
+          <h2 id="contact-heading" class="section-title light">Let's build something great together</h2>
+          <p class="contact-intro">
+            Have a project in mind, or just want to say hi? Send me a message
+            and I'll get back to you as soon as I can.
+          </p>
+          <ul class="contact-details">
+            <li><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> <a href="mailto:maslahmohamed92@gmail.com">maslahmohamed92@gmail.com</a></li>
+            <li><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+254722492593">+254 722 492 593</a></li>
+          </ul>
           <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
           </div>
-          <a href="images/Maslah CV.pdf" download class="btn btn2">Download CV</a>
+          <a href="images/Maslah-CV.pdf" download class="btn btn-light"><i class="fa-solid fa-download" aria-hidden="true"></i> Download CV</a>
         </div>
 
         <div class="contact-right">
-          <form>
-            <input type="text" name="Name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-            <button type="submit" class="btn btn2">Send Message</button>
+          <!-- Replace "your-form-id" with your Formspree form ID (or your own endpoint) -->
+          <form action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" required />
+
+            <label for="email">Your email</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" required />
+
+            <label for="message">How can I help?</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me a little about your project..." required></textarea>
+
+            <button type="submit" class="btn">Send message</button>
           </form>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="copyright">
-    <p>© Maslah. Made with <i class="fa-solid fa-heart"></i> by Easy Tutorials</p>
-  </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Maslah Mohamed. Designed and built with care in Kenya.</p>
+      <a href="#hero" class="to-top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    </div>
+  </footer>
 
   <script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
+    // Tabs (click + arrow keys)
+    const tabs = Array.from(document.querySelectorAll(".tab-links"));
+    const panels = Array.from(document.querySelectorAll(".tab-contents"));
 
-    function opentab(tabname, event) {
-      for (let link of tablinks) {
-        link.classList.remove("active-link");
-      }
-      for (let content of tabcontents) {
-        content.classList.remove("active-tab");
-      }
-      event.currentTarget.classList.add("active-link");
-      document.getElementById(tabname).classList.add("active-tab");
+    function activateTab(tab) {
+      tabs.forEach(t => {
+        const on = t === tab;
+        t.classList.toggle("active-link", on);
+        t.setAttribute("aria-selected", on);
+        t.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach(p => p.classList.toggle("active-tab", p.id === tab.dataset.tab));
     }
 
-    function toggleMenu() {
-      const navLinks = document.getElementById("nav-links");
-      navLinks.classList.toggle("active");
-    }
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => activateTab(tab));
+      tab.addEventListener("keydown", e => {
+        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+        const next = tabs[(i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length];
+        next.focus();
+        activateTab(next);
+      });
+    });
+
+    // Mobile menu
+    const navLinks = document.getElementById("nav-links");
+    const menuBtn = document.getElementById("menu-icon");
+    menuBtn.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("active");
+      menuBtn.setAttribute("aria-expanded", open);
+    });
+    navLinks.querySelectorAll("a").forEach(a =>
+      a.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded", "false");
+      })
+    );
+
+    // Header shadow on scroll
+    const header = document.getElementById("header");
+    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
-
 </html>
